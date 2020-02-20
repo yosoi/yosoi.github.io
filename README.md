@@ -1,2 +1,1 @@
-# yosoi.github.io
-Yosoi's blog.
+# Yosoi's Blog
