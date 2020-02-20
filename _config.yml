@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
-title: "web log"
+title: "notes"
+description: "A place to publish project-related notes."
 logo: img/logo.png
-show_downloads: "false"
+show_downloads: false
