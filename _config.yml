@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+title: "Yosoi's Blog"
+logo: "img/logo.png"
+show_downloads: "false"
