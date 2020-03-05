@@ -1,3 +1,13 @@
+# Versions
+[This helpful document](https://semver.org/) can be summed up as follows:
+
+    Given a version number MAJOR.MINOR.PATCH, increment the:
+
+    * MAJOR version when you make incompatible API changes,
+    * MINOR version when you add functionality in a backwards compatible manner, and
+    * PATCH version when you make backwards compatible bug fixes.
+
+
 # Phaser + Sockette = Realtime Multiplayer HTML Games
 [Sockette](https://github.com/lukeed/sockette) provides an extremely simple way to connect your Phaser game to a websocket URL.
 ````
