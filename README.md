@@ -15,7 +15,7 @@ Navigate into the newly created `app` folder. Inside, you will see a handful of 
 
 Create a script named `main.py` in the `app` sub-folder.
 
-Before we write any code, we should install some dependencies. We will be using [fire]() to create the interface for our console application. To add `fire` as a dependency, run:
+Let's install dependencies before writing any code. We will use [fire]() to create the interface for this console application. To add `fire` as a dependency, run:
 
 `poetry add fire`
 
@@ -27,8 +27,31 @@ Now that `fire` is installed, open `main.py` and paste the following code.
 
 ````
 from fire import Fire
-````
 
+def greet(name):
+    msg = "Hello, {}".format(name)
+    print(msg)
+
+def activate():
+    Fire({
+        "greet": greet
+    })
+````
+Inside of the `app` sub-folder is a script called `__init__.py`. Open it and paste the following code:
+
+````
+from .main import activate
+````
+To learn more about Python modules and `__init__.py`, [click here]().
+
+Once you have updated `__init__.py`, navigate to your project folder and open `pyproject.toml`. This file contains information about your program.
+
+To make your program executable, add the following lines to `pyproject.toml`:
+
+````
+[tool.poetry.scripts]
+app = 'app:activate'
+````
 
 # Choosing a License
 [This helpful document]() explains how to choose a license for your software and can be summed up as follows:
