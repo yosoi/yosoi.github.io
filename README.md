@@ -1,3 +1,35 @@
+# Publishing CLI Programs to PyPI
+Using Python, [fire](), and [poetry](), you can create a simple console application and publish it to [PyPI](). Once published to PyPI, users will be able to install your project using [pip3]().
+
+Install [poetry]():
+
+`curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3`
+
+Navigate to the directory where you want to create your project.
+
+Then, to create a project named `app`, run:
+
+`poetry new app`
+
+Navigate into the newly created `app` folder. Inside, you will see a handful of files, a sub-folder named `tests`, and another sub-folder named `app`.
+
+Create a script named `main.py` in the `app` sub-folder.
+
+Before we write any code, we should install some dependencies. We will be using [fire]() to create the interface for our console application. To add `fire` as a dependency, run:
+
+`poetry add fire`
+
+To install your dependencies, run:
+
+`poetry install`
+
+Now that `fire` is installed, open `main.py` and paste the following code.
+
+````
+from fire import Fire
+````
+
+
 # Choosing a License
 [This helpful document]() explains how to choose a license for your software and can be summed up as follows:
 
