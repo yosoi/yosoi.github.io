@@ -1,3 +1,79 @@
+# Distributing Unity Packages with Git
+Unity Packages provide a useful way to make code more modular and reusable. Using Unity and GitHub, you can easily create, distribute, and manage Unity Packages.
+
+## Create Project Structure
+To create a package called `abc`, first create the following files and folders:
+````
+abc/
+  abc-pkg/
+    package.json
+````
+Open Unity Hub and create a new project named `abc-dev` in the `abc` folder. Now, your folder structure should look like this:
+````
+abc/
+  abc-dev/
+    ...unity stuff...
+  abc-pkg/
+    package.json
+````
+## Configure Repositories
+
+Navigate to your `abc-dev` folder and initialize a new git repository. Be sure to include a Unity-appropriate `.gitignore` file.
+
+Once you have initialized your `abc-dev` repository, navigate to your `abc-pkg` folder and initialize a new repository there as well. Again, be sure to include an appropriate `.gitignore` file.
+
+## Configure `package.json`
+The Unity Package Manager looks for `package.json` when importing a package. Use `package.json` to provide information about your package.
+
+Open `package.json` and paste in the following JSON:
+````
+{
+  "name": "com.example.abc",
+  "version": "1.2.3",
+  "displayName": "Package Example",
+  "description": "This is an example package",
+  "unity": "2019.3",
+  "author": {
+    "name": "Dude",
+    "email": "dude@example.com",
+    "url": "https://dude.example.com"
+  }
+}
+````
+Don't forget to customize `package.json` with your own information. For more information about the `package.json` file, [click here]().
+
+## Add Assets to Package
+Open the `abc-dev` project in Unity.
+
+Open the Package Manager from the `Window` menu.
+
+Click the `+` button to add a new package from disk. When prompted to open a package, navigate to the `abc-pkg` folder and open `package.json`.
+
+Open the `Project` window in Unity. Expand the `Packages` node in the tree view and locate your newly installed package.
+
+Now, you can add assets directly to your package folder using `Right Click -> Create`.
+
+## Create Assembly Definition
+Before publishing your package, you must include an assembly definition file. To learn more about assembly definitions in Unity, [click here]().
+
+To create an assembly definition file, open your package folder in Unity's `Project` window. Then, `Right Click -> Create -> Assembly Definition`. Name your assembly definition file the same as your package (e.g. `abc-pkg.asmdef`).
+
+## Publish
+Commit and publish your changes to the `abc-pkg` repository. Now Unity can import your package using your package's git URL.
+
+## Test
+Locate the git URL of your `abc-pkg` repository. The git URL will be the same URL you would use to clone your project. Copy the URL to your clipboard.
+
+Now, create a new Unity project somewhere on your computer.
+
+Once you have created your new project, we will try to import your newly published package.
+
+In Unity, navigate to the Package Manager window. Click the `+` button to add a new package from a git URL.
+
+Paste the git URL of your `abc-pkg` repository and press enter.
+
+Now Unity can use your git repository to keep your package up-to-date.
+
 # Publishing CLI Programs to PyPI
 Using Python, [fire](https://google.github.io/python-fire/guide/), and [poetry](https://python-poetry.org/), you can create a simple console application and publish it to [PyPI](https://pypi.org/). Once published to PyPI, users will be able to install your project using [pip](https://pip.pypa.io/en/stable/).
 
@@ -129,7 +205,7 @@ class TestScene extends Phaser.Scene {
         key: "TestScene"
       });
     }
-    
+
     create() {
       this.connection = new Sockette(
         "...your websocket url goes here...",
@@ -158,4 +234,3 @@ An anonymous RPG-style chatroom game. This project idea was chosen as a gentle i
 
 # Why HTML Games?
 HTML games are easy for players to access and share from any device, including public computers. HTML games can also be repackaged as mobile applications.
-
