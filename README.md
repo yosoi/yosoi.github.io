@@ -1,5 +1,5 @@
 # Distributing Unity Packages with Git
-Unity Packages provide a useful way to make code more modular and reusable. Using Unity and GitHub, you can easily create, distribute, and manage Unity Packages.
+Unity Packages provides a useful way to make code more modular and reusable. Using Unity and GitHub, you can easily create, distribute, and manage Unity Packages.
 
 ## Create Project Structure
 To create a package called `abc`, first create the following files and folders:
@@ -40,7 +40,7 @@ Open `package.json` and paste in the following JSON:
   }
 }
 ````
-Don't forget to customize `package.json` with your own information. For more information about the `package.json` file, [click here]().
+Don't forget to customize `package.json` with your own information. For more information about the `package.json` file, [click here](https://docs.unity3d.com/Manual/upm-manifestPkg.html).
 
 ## Add Assets to Package
 Open the `abc-dev` project in Unity.
@@ -54,7 +54,7 @@ Open the `Project` window in Unity. Expand the `Packages` node in the tree view 
 Now, you can add assets directly to your package folder using `Right Click -> Create`.
 
 ## Create Assembly Definition
-Before publishing your package, you must include an assembly definition file. To learn more about assembly definitions in Unity, [click here]().
+Before publishing your package, you must include an assembly definition file. To learn more about assembly definitions in Unity, [click here](https://docs.unity3d.com/Manual/cus-asmdef.html).
 
 To create an assembly definition file, open your package folder in Unity's `Project` window. Then, `Right Click -> Create -> Assembly Definition`. Name your assembly definition file the same as your package (e.g. `abc-pkg.asmdef`).
 
